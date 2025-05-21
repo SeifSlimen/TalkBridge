@@ -1,9 +1,7 @@
-C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\User.java
 C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\controller\UserController.java
 C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\repository\UserRepository.java
-C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\UserRepository.java
+C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\config\JwtRequestFilter.java
 C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\model\User.java
-C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\UserController.java
 C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\Application.java
 C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\config\SecurityConfig.java
 C:\Users\ExpertTek\Desktop\JAVA\spring-boot-react-app\backend\src\main\java\com\example\config\JwtUtil.java

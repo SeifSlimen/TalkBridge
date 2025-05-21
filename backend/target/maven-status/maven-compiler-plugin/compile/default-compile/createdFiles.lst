@@ -1,6 +1,9 @@
+com\example\config\CorsConfig.class
 com\example\repository\UserRepository.class
 com\example\Application.class
 com\example\config\SecurityConfig.class
+com\example\config\JwtRequestFilter.class
 com\example\model\User.class
 com\example\config\JwtUtil.class
 com\example\controller\UserController.class
+com\example\config\CorsConfig$1.class

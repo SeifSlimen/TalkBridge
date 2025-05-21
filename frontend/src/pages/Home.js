@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { fetchUsers } from '../services/api';
+import './Home.css';
 
 function Home({ token, onLogout }) {
   const [users, setUsers] = useState([]);
@@ -21,18 +22,25 @@ function Home({ token, onLogout }) {
   };
 
   return (
-    <div>
-      <h2>Welcome to the Home Page</h2>
-      <button onClick={onLogout}>Logout</button>
-      <button onClick={handleFetchUsers}>Fetch Users (Protected)</button>
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-      <ul>
-        {users.map((u) => (
-          <li key={u.id}>
-            {u.name} ({u.email})
-          </li>
-        ))}
-      </ul>
+    <div className="home-container">
+      <div className="home-card">
+        <h2>Welcome</h2>
+
+        <div className="home-buttons">
+          <button className="home-btn logout" onClick={onLogout}>Logout</button>
+          <button className="home-btn" onClick={handleFetchUsers}>Fetch Users</button>
+        </div>
+
+        {error && <div className="home-error">{error}</div>}
+
+        <ul className="user-list">
+          {users.map((u) => (
+            <li key={u.id}>
+              <strong>{u.name}</strong> <span>{u.email}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

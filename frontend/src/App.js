@@ -35,6 +35,7 @@ function App() {
           path="/login"
           element={!token ? <Login onLogin={handleLogin} /> : <Navigate to="/" />}
         />
+        <Route path="*" element={<Navigate to={token ? "/" : "/login"} />} />
       </Routes>
     </Router>
   );

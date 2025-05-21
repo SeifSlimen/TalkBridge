@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css';
-
+import '../styles/App.css';
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,33 +31,38 @@ function Login({ onLogin }) {
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+    <form className="login-form" onSubmit={handleSubmit}>
+  <h2>Login</h2>
 
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          required
-        />
+  <div className="input-group">
+    <label>Email</label>
+    <input
+      type="email"
+      placeholder="Email"
+      value={email}
+      onChange={e => setEmail(e.target.value)}
+      required
+    />
+  </div>
 
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required
-        />
+  <div className="input-group">
+    <label>Password</label>
+    <input
+      type="password"
+      placeholder="Password"
+      value={password}
+      onChange={e => setPassword(e.target.value)}
+      required
+    />
+  </div>
 
-        <button type="submit" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
+  <button className="login-btn" type="submit" disabled={loading}>
+    {loading ? 'Logging in...' : 'Login'}
+  </button>
 
-        {error && <div className="login-error">{error}</div>}
-      </form>
+  {error && <div className="login-error">{error}</div>}
+</form>
+
     </div>
   );
 }

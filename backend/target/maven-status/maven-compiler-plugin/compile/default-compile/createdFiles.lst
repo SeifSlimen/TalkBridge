@@ -1,6 +1,8 @@
 com\example\config\CorsConfig.class
 com\example\repository\UserRepository.class
 com\example\Application.class
+com\example\config\SignalingHandler.class
+com\example\config\WebSocketConfig.class
 com\example\config\SecurityConfig.class
 com\example\config\JwtRequestFilter.class
 com\example\model\User.class

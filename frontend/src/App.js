@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Home from './pages/Home';
+import Meeting from './components/Meeting';
 
 function App() {
   const [token, setToken] = useState(() => localStorage.getItem('authToken') || null);
@@ -35,6 +36,7 @@ function App() {
           path="/login"
           element={!token ? <Login onLogin={handleLogin} /> : <Navigate to="/" />}
         />
+        <Route path="/meeting/:code" element={<Meeting />} />
         <Route path="*" element={<Navigate to={token ? "/" : "/login"} />} />
       </Routes>
     </Router>

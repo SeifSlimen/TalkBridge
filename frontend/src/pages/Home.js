@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { fetchUsers } from '../services/api';
-import './Home.css';
-
+import '../styles/App.css';
 function Home({ token, onLogout }) {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState('');
@@ -21,27 +20,36 @@ function Home({ token, onLogout }) {
     }
   };
 
+  const handleStartMeeting = () => {
+  // Generate a unique meeting code (simple random string for now)
+  const meetingCode = Math.random().toString(36).substring(2, 10).toUpperCase();
+  // Redirect to the meeting room (you'll implement the meeting page later)
+  window.location.href = `/meeting/${meetingCode}`;
+};
+
+const handleJoinMeeting = () => {
+  const code = prompt('Enter the meeting code:');
+  if (code && code.trim().length > 0) {
+    window.location.href = `/meeting/${code.trim().toUpperCase()}`;
+  }
+};
+
   return (
-    <div className="home-container">
-      <div className="home-card">
-        <h2>Welcome</h2>
-
-        <div className="home-buttons">
-          <button className="home-btn logout" onClick={onLogout}>Logout</button>
-          <button className="home-btn" onClick={handleFetchUsers}>Fetch Users</button>
-        </div>
-
-        {error && <div className="home-error">{error}</div>}
-
-        <ul className="user-list">
-          {users.map((u) => (
-            <li key={u.id}>
-              <strong>{u.name}</strong> <span>{u.email}</span>
-            </li>
-          ))}
-        </ul>
+   <div className="home-landing-container">
+    <div className="home-landing-card">
+      <h1 className="home-title">Welcome to TalkBridge</h1>
+      <p className="home-subtitle">Your modern, secure video meeting platform</p>
+      <div className="home-actions">
+        <button className="home-btn primary" onClick={handleStartMeeting}>Start a New Meeting</button>
+        <button className="home-btn" onClick={handleJoinMeeting}>Join a Meeting</button>
+     </div>
+      <div className="home-info">
+        <p>Invite colleagues, friends, or clients to join your meeting room.</p>
+        <p>Enjoy real-time video, chat, and collaboration features.</p>
       </div>
+      <button className="home-btn logout" onClick={onLogout}>Logout</button>
     </div>
+  </div>
   );
 }
 
